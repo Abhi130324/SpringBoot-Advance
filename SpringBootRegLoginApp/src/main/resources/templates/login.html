@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<h2>Login Here</h2>
+
+
+
+<div th:if ="${errorMsg}">
+<h3 style= "color: red;" th:text ="${errorMsg}"> </h3>
+</div>
+
+
+<!-- to automatically insert the value we get here -->
+
+	<form th:action="@{/loginForm}" th:object="${user}" method = "post">
+		<br /> Email id : <input type="text" th:field="*{email}" > <br />
+		<br /> Password : <input type="password" th:field="*{password}"> <br />
+		<br /> <input type="submit" value="Login">
+	</form>
+	
+	<br />  <br />
+	
+	
+	<!-- we can call index.html because it is static page but we cannot call templates pages directly. -->
+	<a href="index.html">Home</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	
+	<a href="regPage">Register</a>
+	
+	
+	
+	
+	
+</body>
+</html>
